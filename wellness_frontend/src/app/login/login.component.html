@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="s6l.png"  style="width:40px;" class="rounded-pill"></a><div  class="navbar-text text-white"><span class="f">Wellness Center</span>
+    </div>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="nav-link ml-3" href="#" (click)="toggleRegisterMode()">Login</button>
+      </li>
+      <br/>
+      <li class="nav-item">
+        <!-- <a class="nav-link text-white" href="/toggleRegisterMode">Register</a> -->
+        <button class="nav-link ml-3 " (click)="toggleRegisterMode()">Register</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+<div class="app-mypage">
+    <div class="app-main-content">
+      <div class="app-form-container">
+        <div class="form-box">
+          <h2 *ngIf="!registerMode">Login</h2>
+          <form *ngIf="!registerMode" (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="loginData.username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="loginData.password" required>
+            </div>
+            <br/>
+            <button type="submit" class="btn-primary" [disabled]="loginForm.invalid">Login</button><br/><br/>
+            <span>Don't have an account? <a href="#" (click)="toggleRegisterMode()">Register here</a></span>
+          </form>
+  
+          <h2 *ngIf="registerMode">Register</h2>
+          <form *ngIf="registerMode" (ngSubmit)="onRegisterSubmit()" #registerForm="ngForm">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="registerData.username" #username="ngModel" required>
+              <div *ngIf="username.touched && username.invalid" class="alert alert-danger">Username is required</div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="registerData.email" #email="ngModel" required>
+              <div *ngIf="email.touched && email.invalid" class="alert alert-danger">Valid email is required</div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="registerData.password" #password="ngModel" required>
+              <div *ngIf="password.touched && password.invalid" class="alert alert-danger">Password is required</div>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" [(ngModel)]="registerData.confirmPassword" #confirmPassword="ngModel" required>
+              <div *ngIf="confirmPassword.touched && confirmPassword.invalid" class="alert alert-danger">Confirming password is required</div>
+              <div *ngIf="registerData.password !== registerData.confirmPassword && confirmPassword.touched" class="alert alert-danger">Passwords do not match</div>
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact</label>
+              <input type="text" class="form-control" id="contact" name="contact" [(ngModel)]="registerData.contact" #contact="ngModel" required>
+              <div *ngIf="contact.touched && contact.invalid" class="alert alert-danger">Contact is required</div>
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" name="address" [(ngModel)]="registerData.address" #address="ngModel" required>
+              <div *ngIf="address.touched && address.invalid" class="alert alert-danger">Address is required</div>
+            </div>
+            <button type="submit" class="btn-primary" [disabled]="registerForm.invalid">Register</button>
+            <span>Already have an account? <a href="#" (click)="toggleRegisterMode()">Login here</a></span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

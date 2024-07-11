@@ -1,0 +1,444 @@
+
+/* Navbar Styles */
+/* .navbar {
+  background-color: #007bff !important; 
+} */
+
+/* .navbar-brand {
+  font-size: 1.5rem;
+} */ 
+
+/* .navbar-toggler-icon {
+  background-color: rgb(64, 61, 234);
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.334);
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+} */
+
+.navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 0.918);
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+/* Home Section Styles */
+.home {
+  background: url('C:/Users/satya/Desktop/project/front/my/public/c2.jpg') center center/cover no-repeat;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home .sec {
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.home .sc {
+  color: #ffc107; /* Yellow color */
+  font-weight: bold;
+}
+
+.home p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Services Section Styles */
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  padding-top: 140px;
+  background-attachment: fixed;
+  background-image: url("C:/Users/satya/Desktop/project/front/my/public/ourr.jpg");
+  background-repeat:no-repeat;
+  background-size:fit;
+  background-position: center;
+}
+
+
+.service-card {
+  width: calc(30% - 20px);
+  /* background-color: rgb(218, 223, 225); */
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.4s ease-in-out;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-content {
+  padding: 30px;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: blue;
+}
+
+.service-content p {
+  /* font-size: 20px; */
+  line-height: 1.6;
+}
+
+
+.appointments-container {
+  height: 100vh;
+  background-image: url("C:/Users/satya/Desktop/project/front/my/public/app.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px; /* Adjust padding as needed */
+  margin-top: 20px; /* Adjust margin as needed */
+  border-radius: 10px; /* Optional: Add border radius for a rounded look */
+  box-shadow: 0 0 10px rgba(235, 235, 235, 0.1); /* Optional: Add box shadow for depth */
+}
+
+.appointments-container h4 {
+  color: #000102; 
+  text-align: center;
+  font-size: 30px;/* Optional: Set text color to be visible on the background */
+}
+
+.appointments-container table {
+  width: 70%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-left: 60px; 
+  padding-left: 50px;/* Adjust margin as needed */
+}
+
+.appointments-container th, .appointments-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background-color: #fff; /* Ensure table rows have a contrasting background */
+}
+
+.appointments-container th {
+  background-color: #f2f2f2;
+}
+
+.appointments-container td {
+  background-color: #fff;
+}
+
+.appointments-container form {
+  margin-top: 40px;
+  background-image: url("C:/Users/satya/Desktop/project/front/my/public/c3.jpg"); /* Adjust margin as needed */
+}
+
+
+/* Form Styles */
+form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+form .form-group {
+  margin-bottom: 15px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form .btn-primary {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* dashboard.component.css
+
+.mydashboard {
+  padding: 20px;
+}
+
+.mydashboard h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.mydashboard button {
+  margin-bottom: 10px;
+}
+
+.mydashboard table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.mydashboard table th,
+.mydashboard table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #4c7bad;
+}
+
+.mydashboard table th {
+  background-color: #f2f2f2;
+}
+
+.mydashboard .btn-warning {
+  margin-right: 20px;
+}
+
+.mydashboard h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.mydashboard input[type="text"],
+.mydashboard input[type="date"],
+.mydashboard input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.mydashboard .btn-primary {
+  margin-top: 10px;
+} */
+
+/* dashboard.component.css */
+
+.myydashboard {
+  padding: 20px;
+  background-image: url("C:/Users/satya/Desktop/project/front/my/public/app.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 100vh;
+  
+  
+}
+
+.myydashboard h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.myydashboard button {
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.myydashboard table {
+  width: 90%;
+  margin-top: 20px;
+  background-color: #a253a9e2;
+
+  /* border-collapse: collapse;
+  align-items: center;
+  justify-content: center;
+  padding-left: 150px; */
+}
+
+.myydashboard table th,
+.myydashboard table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.myydashboard table th {
+  background-color: #e5ad06eb;
+  
+}
+
+.myydashboard .btn-warning {
+  margin-right: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.myydashboard h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.myydashboard input[type="text"],
+.myydashboard input[type="date"],
+.myydashboard input[type="time"] {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.myydashboard .btn-primary {
+  margin-top: 10px;
+}
+
+.form-box {
+  background-color: #d6bfbf;
+  border: 1px solid hsl(0, 80%, 18%);
+  padding: 20px;
+  margin-top: 20px;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.form-box:hover {
+  transform: translateY(-5px);
+}
+
+.form-box input,
+.form-box button {
+  margin-bottom: 10px;
+}
+
+.form-box button {
+  padding: 10px 20px;
+  background-color: #0b5318;
+  color: rgba(74, 54, 54, 0.678);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-box button:hover {
+  background-color: #0056b3;
+}
+.content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.card{
+  width: 700px;
+  align-content: center;
+}
+
+.content.show {
+  opacity: 1;
+  text-align: center;
+}
+.abdashboard {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-image: url("C:/Users/satya/Desktop/project/front/my/public/ab.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;  
+}
+
+.about-us-container,
+.our-services-container {
+  margin-bottom: 30px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 20px;
+  width: 750px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-right: 200px;
+  margin-left: 370px;
+  height: 60vh;
+  background-size: cover;
+  /* background-image: url("C:/Users/satya/Desktop/project/front/my/public/ab.jpg"); */
+}
+
+.about-us-container h4,
+.our-services-container h4 {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.about-us-container .content,
+.our-services-container .content {
+  line-height: 1.6;
+}
+
+.about-us-container p,
+.our-services-container p {
+  color: #495057;
+}
+
+.about-us-container ul,
+.our-services-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-us-container li,
+.our-services-container li {
+  margin-bottom: 5px;
+}
+
+/* Animation for fadeInOut */
+.content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.content.show {
+  opacity: 1;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* background-color: #343a40; */
+  color: #ffffff;
+}
+
+.first {
+  display: flex;
+  align-items: center;
+}
+
+.first img {
+  width: 40px; /* Adjust as per your logo size */
+  height: 40px;
+  margin-right: 10px;
+}
+
+.first{
+  font-size: 1.4rem;
+  color: rgb(255, 255, 255);
+
+}
+
+.first:hover {
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: #343a40; /* Dark background color */
+  color: #f8f9fa; /* Light text color */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.first:hover span {
+  color: #f8f9fa; /* Change text color on hover */
+}

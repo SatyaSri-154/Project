@@ -1,0 +1,170 @@
+<!-- app/dashboard/dashboard.component.html -->
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <span class="first">Welcome {{ username }}</span>
+    <div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" *ngIf="username">
+          <a class="nav-link text-white ml-3" (click)="navigateTo('home')">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="username">
+          <a class="nav-link text-white ml-3" (click)="navigateTo('services')">Services</a>
+        </li>
+        <li class="nav-item" *ngIf="username">
+          <a class="nav-link text-white ml-3" (click)="navigateTo('myAppointments')">My Appointments</a>
+        </li>
+        <!-- Uncomment the following to enable booking appointment functionality -->
+        <!-- <li class="nav-item" *ngIf="username">
+          <a class="nav-link text-white ml-3" (click)="navigateTo('bookAppointment')">Book Appointment</a>
+        </li> -->
+        <li class="nav-item" *ngIf="username">
+          <a class="nav-link text-white ml-3" (click)="navigateTo('aboutUs')">About Us</a>
+        </li>
+        <li class="nav-item" *ngIf="username">
+          <a class="nav-link text-white ml-3" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard">
+  <!-- Home Section -->
+  <div *ngIf="currentView === 'home'" class="home">
+    <div class="sec">
+      <p><span class="sc">Welcome</span> to our <span class="sc">wellness center..</span> We're thrilled to
+        have you here. Our center is dedicated to supporting your journey to better health with personalized wellness programs, expert consultations,
+        and a nurturing community. Let us help you achieve a balanced, vibrant lifestyle. We're excited to be a part of your wellness journey!</p>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div *ngIf="currentView === 'services'" class="services-container">
+    <div class="service-card service-card1">
+      <div class="service-img">
+        <img src="yoga.jpg" alt="Yoga Image">
+      </div>
+      <div class="service-content">
+        <h3>Yoga</h3>
+        <p>Transform through yoga at our center. Explore Hatha, Vinyasa, and Restorative Yoga for flexibility, strength, and mindfulness.</p>
+      </div>
+    </div>
+
+    <div class="service-card service-card2">
+      <div class="service-img">
+        <img src="fitness.jpg" alt="Fitness Image">
+      </div>
+      <div class="service-content">
+        <h3>Fitness</h3>
+        <p>Enhance physical well-being with personalized fitness sessions. Build strength, improve flexibility, and achieve fitness goals in a supportive environment.</p>
+      </div>
+    </div>
+
+    <div class="service-card service-card3">
+      <div class="service-img">
+        <img src="nutrition.jpg" alt="Nutrition Image">
+      </div>
+      <div class="service-content">
+        <h3>Nutrition</h3>
+        <p>Optimize health with tailored nutrition guidance. Manage weight, health conditions, and overall well-being with expert support.</p>
+      </div>
+    </div>
+
+    <div class="service-card service-card4">
+      <div class="service-img">
+        <img src="men.jpeg" alt="Mental Wellness Image">
+      </div>
+      <div class="service-content">
+        <h3>Mental Wellness Programs</h3>
+        <p>Explore workshops for mental health and resilience. Join programs led by counselors for stress relief and emotional well-being.</p>
+      </div>
+    </div>
+
+    <div class="service-card service-card5">
+      <div class="service-img">
+        <img src="health.jpg" alt="Health Assessment Image">
+      </div>
+      <div class="service-content">
+        <h3>Health Assessments</h3>
+        <p>Take charge with comprehensive health assessments. Get personalized plans for preventive care and health optimization.</p>
+      </div>
+    </div>
+
+    <div class="service-card service-card6">
+      <div class="service-img">
+        <img src="mindful.png" alt="Mindfulness Workshops Image">
+      </div>
+      <div class="service-content">
+        <h3>Mindfulness Workshops</h3>
+        <p>Discover mindfulness for stress reduction and clarity. Join workshops led by experts for practical tools in daily life.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Appointments Section -->
+  <div *ngIf="currentView === 'myAppointments'" class="myydashboard">
+    <h1>Welcome {{username}}, your appointments </h1>
+    
+    <button class="btn btn-warning" (click)="getAppointments()">Display Appointments</button><br/><br/>
+    <button class="btn btn-warning" (click)="addAppointment($event)">Add Appointment</button><br/><br/>
+    
+    <!-- Table of appointments -->
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Appointment ID</th>
+          <th>Services</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.services }}</td>
+          <td>{{ appointment.date }}</td>
+          <td>{{ appointment.time }}</td>
+          <td>
+            <button class="btn btn-warning" (click)="updateAppointment(appointment, $event)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteAppointment(appointment.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Form for adding/updating appointments -->
+    <div *ngIf="displayAddForm || displayUpdateForm" class="form-box">
+      <h2>{{ addOrUpdateTitle }}</h2>
+      Services: <input type="text" [(ngModel)]="appointment.services"><br/><br/>
+      Date: <input type="date" [(ngModel)]="appointment.date"><br/><br/>
+      Time: <input type="time" [(ngModel)]="appointment.time"><br/><br/>
+    
+      <button class="btn btn-success" (click)="createOrUpdateAppointment()">Submit</button>
+    </div>
+  </div>
+</div>
+
+
+  <div *ngIf="currentView === 'aboutUs'" class="abdashboard">
+    <div class="section-container about-us-container">
+      <h4>About Us</h4>
+      <p>Welcome to our wellness center. We are dedicated to promoting holistic well-being through personalized programs, 
+        expert guidance, and a supportive community. Our mission is to help you achieve optimal 
+        health and balance in mind, body, and spirit.</p>
+      <h4>Our Services</h4>
+      <p>Explore our diverse range of services designed to enhance your well-being:</p>
+      <ul>
+        <li>Yoga: Transform through various yoga practices.</li>
+        <li>Fitness: Personalized fitness sessions for strength and flexibility.</li>
+        <li>Nutrition: Tailored guidance for optimal health.</li>
+        <li>Mental Wellness Programs: Workshops for stress relief and emotional well-being.</li>
+        <li>Health Assessments: Comprehensive plans for preventive care.</li>
+        <li>Mindfulness Workshops: Tools for stress reduction and clarity.</li>
+      </ul>
+    </div>
+</div>  
+
+
+
